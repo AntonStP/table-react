@@ -1,0 +1,37 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include option(width, 140px);
+  @include option(margin, 20px 0 0 auto);
+
+  &__btn {
+    position: relative;
+    @include option(width, 40px);
+    @include option(height, 35px);
+    @include option(border-radius, 5px);
+    background: #82bca8;
+    cursor: pointer;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      @include option(width, 23px);
+      @include option(height, 21px);
+      background: url("./../../public/arrow.svg") no-repeat center / contain;
+      transform-origin: 50% 50%;
+    }
+    &_next {
+      &:after {
+        transform: translate(-50%,-50%) rotate(180deg);
+      }
+    }
+  }
+
+  &__page-counter {
+    color: #000000;
+  }
+
+}

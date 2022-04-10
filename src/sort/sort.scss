@@ -1,0 +1,24 @@
+.sort {
+  display: flex;
+  @include option(margin, 60px 0 20px);
+  @include option-mob(font-size, 10px);
+
+  &__name {
+    @include option(margin, 0 30px 0 0);
+  }
+
+  &__item {
+    @include option(width, 150px);
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  &__item_active {
+    font-weight: 600;
+  }
+}
+

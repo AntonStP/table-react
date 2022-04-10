@@ -1,0 +1,132 @@
+.table {
+  position: relative;
+  width: 85%;
+  height: 90vh;
+  @include option(padding, 20px, 20px 10px);
+  background: rgba(124, 120, 120, 0.2);
+  border-radius: 10px;
+  box-sizing: border-box;
+  @include MOBILE {
+    height: 70vh;
+  }
+
+  &__title {
+    @include option(margin, 0 0 20px);
+    @include option(font-size, 25px, 20px);
+    font-weight: 700;
+  }
+
+  &__clear {
+    @include option-mob(font-size, 14px);
+    position: absolute;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  &__list {
+    background: #FFFFFF;
+    @include option(height, 380px, 270px);
+    @include option(padding, 15px);
+    @include option(border-radius, 4px);
+    box-sizing: border-box;
+  }
+
+  &__row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include option(height, 55px, 40px);
+    @include option(font-size, 15px, 6px);
+    box-sizing: border-box;
+  }
+
+  &__row::after {
+    content: '';
+    position: absolute;
+    @include option(bottom, -3px);
+    width: 100%;
+    @include option(height, 1px);
+    background: rgba(124, 120, 120, 0.2);
+  }
+
+  &__row_description {
+    @include option(font-size, 13px, 6px);
+    color: #9c9c9c;
+  }
+
+  &__row-cell {
+    display: inline-flex;
+    white-space: pre-wrap;
+  }
+
+  &__row-cell_username {
+    width: 20%;
+    font-weight: 500;
+    color: royalblue;
+    @include MOBILE {
+      width: 24%;
+    }
+  }
+
+  &__row-cell_description {
+    color: #9c9c9c;
+  }
+
+  &__row-cell_email {
+    width: 35%;
+    @include MOBILE {
+      width: 40%;
+    }
+  }
+
+  &__row-cell_registration {
+    width: 25%;
+  }
+
+  &__row-cell_rating {
+    width: 15%;
+    @include MOBILE {
+      width: 6%;
+    }
+  }
+
+  &__row-cell_delete {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5%;
+    @include MOBILE {
+      width: 5%;
+    }
+  }
+
+  &__row-delete {
+    position: relative;
+    @include option(width, 25px, 16px);
+    @include option(height, 25px, 16px);
+    @include option(border-radius, 5px);
+    cursor: pointer;
+    background: #82bca8;
+  }
+
+  &__row-delete:before,
+  &__row-delete:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include option(width, 17px, 12px);
+    @include option(height, 2px, 1px);
+    background: #FFFFFF;
+  }
+
+  &__row-delete:before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &__row-delete:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}

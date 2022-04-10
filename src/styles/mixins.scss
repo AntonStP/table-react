@@ -1,0 +1,31 @@
+@mixin option($n, $v, $vm: $v, $vt: $vm) {
+  @include DESKTOP {
+    #{$n}: $v;
+  }
+  @include TABLET-L {
+    #{$n}: $v;
+  }
+  @include MOBILE {
+    #{$n}: $vm;
+  }
+  @include TABLET {
+    #{$n}: $vt;
+  }
+}
+@mixin option-mob($n, $vm, $vt: $vm){
+  @include MOBILE{
+    #{$n}:($vm);
+  }
+  @include TABLET{
+    #{$n}:($vt);
+  }
+}
+
+@mixin option-desk($n, $v){
+  @include DESKTOP{
+    #{$n}:($v);
+  }
+  @include TABLET-L{
+    #{$n}:($v);
+  }
+}
